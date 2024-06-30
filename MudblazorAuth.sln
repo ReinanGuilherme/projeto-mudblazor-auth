@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25A6E2F2-5647-4220-BF0A-C62C79E53C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudblazorAuth.Api", "src\MudblazorAuth.Api\MudblazorAuth.Api.csproj", "{97A8DAD4-903D-4E15-885C-E0781AC0F21B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudblazorAuth.Domain", "src\MudblazorAuth.Domain\MudblazorAuth.Domain.csproj", "{F73E525F-B53C-4B3F-8AF8-583401762DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudblazorAuth.Application", "src\MudblazorAuth.Application\MudblazorAuth.Application.csproj", "{6439D9DA-8343-4323-9A0A-DB5294DB01A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudblazorAuth.Exception", "src\MudblazorAuth.Exception\MudblazorAuth.Exception.csproj", "{FBC742B8-2BB7-40D2-8685-CF54817F643A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudblazorAuth.Communication", "src\MudblazorAuth.Communication\MudblazorAuth.Communication.csproj", "{6BF1F944-EF57-4AED-BEB2-E6D7D7BEA43C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudblazorAuth.Infrastructure", "src\MudblazorAuth.Infrastructure\MudblazorAuth.Infrastructure.csproj", "{740D889F-ED66-46FF-BE89-A6B41064BAE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97A8DAD4-903D-4E15-885C-E0781AC0F21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A8DAD4-903D-4E15-885C-E0781AC0F21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A8DAD4-903D-4E15-885C-E0781AC0F21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A8DAD4-903D-4E15-885C-E0781AC0F21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73E525F-B53C-4B3F-8AF8-583401762DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73E525F-B53C-4B3F-8AF8-583401762DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73E525F-B53C-4B3F-8AF8-583401762DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73E525F-B53C-4B3F-8AF8-583401762DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6439D9DA-8343-4323-9A0A-DB5294DB01A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6439D9DA-8343-4323-9A0A-DB5294DB01A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6439D9DA-8343-4323-9A0A-DB5294DB01A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6439D9DA-8343-4323-9A0A-DB5294DB01A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC742B8-2BB7-40D2-8685-CF54817F643A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC742B8-2BB7-40D2-8685-CF54817F643A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC742B8-2BB7-40D2-8685-CF54817F643A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC742B8-2BB7-40D2-8685-CF54817F643A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF1F944-EF57-4AED-BEB2-E6D7D7BEA43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF1F944-EF57-4AED-BEB2-E6D7D7BEA43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF1F944-EF57-4AED-BEB2-E6D7D7BEA43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF1F944-EF57-4AED-BEB2-E6D7D7BEA43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{740D889F-ED66-46FF-BE89-A6B41064BAE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740D889F-ED66-46FF-BE89-A6B41064BAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740D889F-ED66-46FF-BE89-A6B41064BAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740D889F-ED66-46FF-BE89-A6B41064BAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97A8DAD4-903D-4E15-885C-E0781AC0F21B} = {25A6E2F2-5647-4220-BF0A-C62C79E53C84}
+		{F73E525F-B53C-4B3F-8AF8-583401762DFE} = {25A6E2F2-5647-4220-BF0A-C62C79E53C84}
+		{6439D9DA-8343-4323-9A0A-DB5294DB01A4} = {25A6E2F2-5647-4220-BF0A-C62C79E53C84}
+		{FBC742B8-2BB7-40D2-8685-CF54817F643A} = {25A6E2F2-5647-4220-BF0A-C62C79E53C84}
+		{6BF1F944-EF57-4AED-BEB2-E6D7D7BEA43C} = {25A6E2F2-5647-4220-BF0A-C62C79E53C84}
+		{740D889F-ED66-46FF-BE89-A6B41064BAE3} = {25A6E2F2-5647-4220-BF0A-C62C79E53C84}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B17B118-A6EB-4D9D-8C79-1A537114EEEC}
+	EndGlobalSection
+EndGlobal
