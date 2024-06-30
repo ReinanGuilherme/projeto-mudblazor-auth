@@ -13,7 +13,7 @@ namespace MudblazorAuth.Infrastructure.Database
 		public DbSet<ProfilePage> ProfilePages { get; set; }
 		public DbSet<Page> Page { get; set; }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options){}
+		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -98,21 +98,33 @@ namespace MudblazorAuth.Infrastructure.Database
 		private void SeedData(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Profile>().HasData(
-				new Profile { Id = 1, Description = "Admin" },
-				new Profile { Id = 2, Description = "User" }
+				new Profile { Description = "Admin" },
+				new Profile { Description = "User" }
 			);
 
 			modelBuilder.Entity<Page>().HasData(
-				new Page { Id = 1, Url = "/page1", IsPrivate = true },
-				new Page { Id = 2, Url = "/page2", IsPrivate = true },
-				new Page { Id = 3, Url = "/page3", IsPrivate = false }
+				new Page { Url = "/SignIn", IsPrivate = false },
+				new Page { Url = "/SignUp", IsPrivate = false },
+				//Acesso Admin e User
+				new Page { Url = "/Home", IsPrivate = true },
+				new Page { Url = "/Counter", IsPrivate = true },
+				new Page { Url = "/Weather", IsPrivate = true },
+				//Acessi Admnin
+				new Page { Url = "/ProfilePermissionsPage", IsPrivate = true },
+				new Page { Url = "/Users", IsPrivate = true },
+				new Page { Url = "/AccessDenied", IsPrivate = true }
 			);
 
 			modelBuilder.Entity<ProfilePage>().HasData(
-				new ProfilePage { Id = 1, IdProfile = 1, IdPage = 1 },
-				new ProfilePage { Id = 2, IdProfile = 1, IdPage = 2 },
-				new ProfilePage { Id = 3, IdProfile = 1, IdPage = 3 },
-				new ProfilePage { Id = 4, IdProfile = 2, IdPage = 3 }
+				new ProfilePage { IdProfile = 1, IdPage = 3 },
+				new ProfilePage { IdProfile = 1, IdPage = 4 },
+				new ProfilePage { IdProfile = 1, IdPage = 5 },
+				new ProfilePage { IdProfile = 1, IdPage = 6 },
+				new ProfilePage { IdProfile = 1, IdPage = 7 },
+				new ProfilePage { IdProfile = 1, IdPage = 8 },
+				new ProfilePage { IdProfile = 2, IdPage = 3 },
+				new ProfilePage { IdProfile = 2, IdPage = 4 },
+				new ProfilePage { IdProfile = 2, IdPage = 5 }
 			);
 		}
 	}
