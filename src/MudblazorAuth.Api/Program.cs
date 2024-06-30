@@ -1,4 +1,5 @@
 using MudblazorAuth.Infrastructure;
+using MudblazorAuth.Infrastructure.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,4 +40,15 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
+await MigrateDatabase();
+
 app.Run();
+
+// add update migration automatico ao iniciar aplicação
+async Task MigrateDatabase()
+{
+	await using var scope = app.Services.CreateAsyncScope();
+
+	await DatabaseMigration.MigrateDatabase(scope.ServiceProvider);
+}
