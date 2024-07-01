@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MudblazorAuth.Domain.Repositories;
 using MudblazorAuth.Infrastructure.Database;
+using MudblazorAuth.Infrastructure.Database.Repositories;
 
 namespace MudblazorAuth.Infrastructure
 {
@@ -23,6 +24,7 @@ namespace MudblazorAuth.Infrastructure
 		private static void AddRepositories(IServiceCollection services)
 		{
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
+			services.AddScoped<IAccountWriteOnlyRepository, AccountRepository>();
 		}
 	}
 }

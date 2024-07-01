@@ -15,10 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\MudblazorAuth.Application\MudblazorAuth.Application.csproj" />
+    <ProjectReference Include="..\MudblazorAuth.Communication\MudblazorAuth.Communication.csproj" />
     <ProjectReference Include="..\MudblazorAuth.Infrastructure\MudblazorAuth.Infrastructure.csproj" />
   </ItemGroup>
 

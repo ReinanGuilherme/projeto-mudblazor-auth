@@ -1,3 +1,4 @@
+using MudblazorAuth.Application;
 using MudblazorAuth.Infrastructure;
 using MudblazorAuth.Infrastructure.Migrations;
 
@@ -9,6 +10,7 @@ builder.Services.AddSwaggerGen();
 
 //Add Dependecy Injection Extension
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApllication();
 
 // add config cors
 builder.Services.AddCors(option =>

@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MudblazorAuth.Communication\MudblazorAuth.Communication.csproj" />
+    <ProjectReference Include="..\MudblazorAuth.Domain\MudblazorAuth.Domain.csproj" />
+    <ProjectReference Include="..\MudblazorAuth.Infrastructure\MudblazorAuth.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
