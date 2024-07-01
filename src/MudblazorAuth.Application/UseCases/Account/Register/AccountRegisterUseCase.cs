@@ -11,12 +11,14 @@ namespace MudblazorAuth.Application.UseCases.Account.Register
         private readonly IAccountWriteOnlyRepository _acccountWriteOnlyRepository;
         private readonly IMapper _mapper;
         private readonly ICryptography _cryptography;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AccountRegisterUseCase(IAccountWriteOnlyRepository acccountWriteOnlyRepository, IMapper mapper, ICryptography cryptography)
+        public AccountRegisterUseCase(IAccountWriteOnlyRepository acccountWriteOnlyRepository, IMapper mapper, ICryptography cryptography, IUnitOfWork unitOfWork)
         {
             _acccountWriteOnlyRepository = acccountWriteOnlyRepository;
             _mapper = mapper;
             _cryptography = cryptography;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<ResponseAccountRegister> Execute(RequestAccountRegister request)
@@ -25,6 +27,7 @@ namespace MudblazorAuth.Application.UseCases.Account.Register
             account.Password = _cryptography.Encrypt(request.Password);
 
             await _acccountWriteOnlyRepository.Add(account);
+            await _unitOfWork.Commit();
 
             var response = _mapper.Map<ResponseAccountRegister>(account);
 

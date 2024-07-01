@@ -11,9 +11,9 @@ namespace MudblazorAuth.Infrastructure.Database
 			_dbContext = dbContext;
 		}
 
-		public void Commit()
+		public async Task Commit()
 		{
-			_dbContext.SaveChanges();
+			await _dbContext.SaveChangesAsync();
 		}
 	}
 }

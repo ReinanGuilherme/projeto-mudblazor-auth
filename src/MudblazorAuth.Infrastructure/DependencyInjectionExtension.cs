@@ -16,6 +16,7 @@ namespace MudblazorAuth.Infrastructure
 		{
 			AddDbContext(services, configuration);
 			AddRepositories(services);
+            AddSecurity(services, configuration);
 		}
         private static void AddSecurity(IServiceCollection services, IConfiguration configuration)
         {
