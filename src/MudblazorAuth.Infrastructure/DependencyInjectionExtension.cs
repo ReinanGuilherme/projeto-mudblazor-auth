@@ -2,8 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MudblazorAuth.Domain.Repositories;
+using MudblazorAuth.Domain.Security.Cryptography;
+using MudblazorAuth.Domain.Security.Tokens;
 using MudblazorAuth.Infrastructure.Database;
 using MudblazorAuth.Infrastructure.Database.Repositories;
+using MudblazorAuth.Infrastructure.Security.Cryptography;
 
 namespace MudblazorAuth.Infrastructure
 {
@@ -14,8 +17,16 @@ namespace MudblazorAuth.Infrastructure
 			AddDbContext(services, configuration);
 			AddRepositories(services);
 		}
+        private static void AddSecurity(IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddScoped<ICryptography, Cryptography>();
 
-		private static void AddDbContext(this IServiceCollection services, IConfiguration configuration)
+            var expirationTimeMinutes = configuration.GetValue<uint>("Settings:Jwt:ExpiresMinutes");
+            var signingKey = configuration.GetValue<string>("Settings:Jwt:SigningKey");
+            services.AddScoped<IToken>(config => new Security.Tokens.Token(expirationTimeMinutes, signingKey!));
+        }
+
+        private static void AddDbContext(this IServiceCollection services, IConfiguration configuration)
 		{
 			var connectionString = configuration.GetConnectionString("Connection");
 			services.AddDbContext<ApplicationDbContext>(options =>
