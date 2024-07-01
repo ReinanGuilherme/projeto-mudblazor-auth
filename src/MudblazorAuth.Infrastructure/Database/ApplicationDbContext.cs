@@ -11,7 +11,7 @@ namespace MudblazorAuth.Infrastructure.Database
 		public DbSet<Account> Accounts { get; set; }
 		public DbSet<Profile> Profiles { get; set; }
 		public DbSet<ProfilePage> ProfilePages { get; set; }
-		public DbSet<Page> Page { get; set; }
+		public DbSet<Page> Pages { get; set; }
 
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
@@ -61,7 +61,7 @@ namespace MudblazorAuth.Infrastructure.Database
 
 			modelBuilder.Entity<Page>().HasData(
 				new Page { Id = 1, Url = "/SignIn", IsPrivate = false },
-				new Page { Id = 2, Url = "/SignUp", IsPrivate = false },
+				new Page { Id = 2, Url = "/Register", IsPrivate = false },
 				//Acesso Admin e User
 				new Page { Id = 3, Url = "/Home", IsPrivate = true },
 				new Page { Id = 4, Url = "/Counter", IsPrivate = true },
