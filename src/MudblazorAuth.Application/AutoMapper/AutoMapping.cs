@@ -23,7 +23,6 @@ namespace MudblazorAuth.Application.AutoMapper
 
         private void EntityToResponse()
         {
-            CreateMap<Account, ResponseAccountRegister>();
         }
     }
 }
