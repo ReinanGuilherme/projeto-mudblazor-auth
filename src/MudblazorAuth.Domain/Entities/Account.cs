@@ -10,6 +10,7 @@ namespace MudblazorAuth.Domain.Entities
 		public long Id { get; set; }
 		public string Username { get; set; } = string.Empty;
 		public string Password { get; set; } = string.Empty;
+		[Column("id_profile")]
 		[ForeignKey("Profile")]
 		public long IdProfile { get; set; }
 		public Profile Profile { get; set; } = default!;

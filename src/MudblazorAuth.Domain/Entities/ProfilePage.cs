@@ -9,10 +9,12 @@ namespace MudblazorAuth.Domain.Entities
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public long Id { get; set; }
 
-		[ForeignKey("Profile")]
+        [Column("id_profile")]
+        [ForeignKey("Profile")]
 		public long IdProfile { get; set; }
 
-		[ForeignKey("Page")]
+        [Column("id_page")]
+        [ForeignKey("Page")]
 		public long IdPage { get; set; }
 
 		public Profile Profile { get; set; } = default!;

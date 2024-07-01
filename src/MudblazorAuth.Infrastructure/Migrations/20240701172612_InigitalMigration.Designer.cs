@@ -11,7 +11,7 @@ using MudblazorAuth.Infrastructure.Database;
 namespace MudblazorAuth.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240701162554_InigitalMigration")]
+    [Migration("20240701172612_InigitalMigration")]
     partial class InigitalMigration
     {
         /// <inheritdoc />
@@ -35,7 +35,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
 
                     b.Property<long>("IdProfile")
                         .HasColumnType("bigint")
-                        .HasColumnName("idprofile");
+                        .HasColumnName("id_profile");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -51,7 +51,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
                         .HasName("pk_accounts");
 
                     b.HasIndex("IdProfile")
-                        .HasDatabaseName("ix_accounts_idprofile");
+                        .HasDatabaseName("ix_accounts_id_profile");
 
                     b.ToTable("accounts");
                 });
@@ -67,12 +67,11 @@ namespace MudblazorAuth.Infrastructure.Migrations
 
                     b.Property<bool>("IsPrivate")
                         .HasColumnType("bit")
-                        .HasColumnName("isprivate");
+                        .HasColumnName("is_private");
 
                     b.Property<string>("Url")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("url");
 
                     b.HasKey("Id")
@@ -175,20 +174,20 @@ namespace MudblazorAuth.Infrastructure.Migrations
 
                     b.Property<long>("IdPage")
                         .HasColumnType("bigint")
-                        .HasColumnName("idpage");
+                        .HasColumnName("id_page");
 
                     b.Property<long>("IdProfile")
                         .HasColumnType("bigint")
-                        .HasColumnName("idprofile");
+                        .HasColumnName("id_profile");
 
                     b.HasKey("Id")
                         .HasName("pk_profilepages");
 
                     b.HasIndex("IdPage")
-                        .HasDatabaseName("ix_profilepages_idpage");
+                        .HasDatabaseName("ix_profilepages_id_page");
 
                     b.HasIndex("IdProfile")
-                        .HasDatabaseName("ix_profilepages_idprofile");
+                        .HasDatabaseName("ix_profilepages_id_profile");
 
                     b.ToTable("profilepages");
 
@@ -256,7 +255,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
                         .HasForeignKey("IdProfile")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_accounts_profiles_idprofile");
+                        .HasConstraintName("fk_accounts_profiles_id_profile");
 
                     b.Navigation("Profile");
                 });
@@ -268,14 +267,14 @@ namespace MudblazorAuth.Infrastructure.Migrations
                         .HasForeignKey("IdPage")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_profilepages_pages_idpage");
+                        .HasConstraintName("fk_profilepages_pages_id_page");
 
                     b.HasOne("MudblazorAuth.Domain.Entities.Profile", "Profile")
                         .WithMany("ProfilePages")
                         .HasForeignKey("IdProfile")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_profilepages_profiles_idprofile");
+                        .HasConstraintName("fk_profilepages_profiles_id_profile");
 
                     b.Navigation("Page");
 

@@ -9,12 +9,10 @@ namespace MudblazorAuth.Domain.Entities
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public long Id { get; set; }
 
-		[Required]
-		[MaxLength(255)]
 		public string Url { get; set; } = string.Empty;
 
-		[Required]
-		public bool IsPrivate { get; set; }
+        [Column("is_private")]
+        public bool IsPrivate { get; set; }
 
 		public ICollection<ProfilePage> ProfilePages { get; set; } = default!;
 	}
