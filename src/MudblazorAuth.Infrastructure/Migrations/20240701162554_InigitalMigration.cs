@@ -13,7 +13,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "page",
+                name: "pages",
                 columns: table => new
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
@@ -23,7 +23,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("pk_page", x => x.id);
+                    table.PrimaryKey("pk_pages", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -73,9 +73,9 @@ namespace MudblazorAuth.Infrastructure.Migrations
                 {
                     table.PrimaryKey("pk_profilepages", x => x.id);
                     table.ForeignKey(
-                        name: "fk_profilepages_page_idpage",
+                        name: "fk_profilepages_pages_idpage",
                         column: x => x.idpage,
-                        principalTable: "page",
+                        principalTable: "pages",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -87,12 +87,12 @@ namespace MudblazorAuth.Infrastructure.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "page",
+                table: "pages",
                 columns: new[] { "id", "isprivate", "url" },
                 values: new object[,]
                 {
                     { 1L, false, "/SignIn" },
-                    { 2L, false, "/SignUp" },
+                    { 2L, false, "/Register" },
                     { 3L, true, "/Home" },
                     { 4L, true, "/Counter" },
                     { 5L, true, "/Weather" },
@@ -152,7 +152,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
                 name: "profilepages");
 
             migrationBuilder.DropTable(
-                name: "page");
+                name: "pages");
 
             migrationBuilder.DropTable(
                 name: "profiles");

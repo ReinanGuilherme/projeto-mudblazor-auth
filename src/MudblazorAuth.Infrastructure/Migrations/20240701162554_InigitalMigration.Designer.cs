@@ -11,7 +11,7 @@ using MudblazorAuth.Infrastructure.Database;
 namespace MudblazorAuth.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240630123652_InigitalMigration")]
+    [Migration("20240701162554_InigitalMigration")]
     partial class InigitalMigration
     {
         /// <inheritdoc />
@@ -76,9 +76,9 @@ namespace MudblazorAuth.Infrastructure.Migrations
                         .HasColumnName("url");
 
                     b.HasKey("Id")
-                        .HasName("pk_page");
+                        .HasName("pk_pages");
 
-                    b.ToTable("page");
+                    b.ToTable("pages");
 
                     b.HasData(
                         new
@@ -91,7 +91,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
                         {
                             Id = 2L,
                             IsPrivate = false,
-                            Url = "/SignUp"
+                            Url = "/Register"
                         },
                         new
                         {
@@ -268,7 +268,7 @@ namespace MudblazorAuth.Infrastructure.Migrations
                         .HasForeignKey("IdPage")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_profilepages_page_idpage");
+                        .HasConstraintName("fk_profilepages_pages_idpage");
 
                     b.HasOne("MudblazorAuth.Domain.Entities.Profile", "Profile")
                         .WithMany("ProfilePages")
