@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MudblazorAuth.Application\MudblazorAuth.Application.csproj" />
     <ProjectReference Include="..\MudblazorAuth.Communication\MudblazorAuth.Communication.csproj" />
+    <ProjectReference Include="..\MudblazorAuth.Exception\MudblazorAuth.Exception.csproj" />
     <ProjectReference Include="..\MudblazorAuth.Infrastructure\MudblazorAuth.Infrastructure.csproj" />
   </ItemGroup>
 

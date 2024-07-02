@@ -135,6 +135,9 @@
   <data name="PASSWORD_MIN_LENGHT" xml:space="preserve">
     <value>Password must be at least 8 characters long.</value>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Unknown error.</value>
+  </data>
   <data name="USERNAME_EMPTY" xml:space="preserve">
     <value>Username empty.</value>
   </data>
