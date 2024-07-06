@@ -120,6 +120,9 @@
   <data name="ACCOUNT_NOT_FOUND" xml:space="preserve">
     <value>Account not found.</value>
   </data>
+  <data name="ACCOUNT_NOT_USER" xml:space="preserve">
+    <value>The provided account is not of type 'user'</value>
+  </data>
   <data name="ACCOUNT_USERNAME_ALREADY_REGISTERED" xml:space="preserve">
     <value>The username is already registered.</value>
   </data>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MudblazorAuth.Application.UseCases.Account.GetAllUsers;
 using MudblazorAuth.Application.UseCases.Account.Register;
+using MudblazorAuth.Application.UseCases.Account.RemoveUser;
 using MudblazorAuth.Application.UseCases.Account.SignIn;
 using MudblazorAuth.Communication.Requests.Account;
 using MudblazorAuth.Communication.Responses;
@@ -37,6 +38,15 @@ namespace MudblazorAuth.Api.Controllers
 		{
 			var response = await useCase.Execute();
 			return Ok(response);
+		}
+
+		[HttpDelete("user")]
+		public async Task<IActionResult> RemoveUser(
+			[FromServices] IAccountRemoveUserUseCase useCase,
+			[FromQuery] string username)
+		{
+			await useCase.Execute(username);
+			return NoContent();
 		}
 	}
 }

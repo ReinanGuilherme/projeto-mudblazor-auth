@@ -29,5 +29,11 @@ namespace MudblazorAuth.Infrastructure.Database.Repositories
 		{
 			return await _dbContext.Accounts.Where(x => x.IdProfile == idProfile).AsNoTracking().ToListAsync();
 		}
+
+		public async Task Remove(Account account)
+		{
+			_dbContext.Accounts.Remove(account);
+            await Task.CompletedTask;
+		}
 	}
 }

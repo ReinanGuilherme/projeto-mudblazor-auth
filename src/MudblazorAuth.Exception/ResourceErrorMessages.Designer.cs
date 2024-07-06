@@ -70,6 +70,15 @@ namespace MudblazorAuth.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided account is not of type &apos;user&apos;.
+        /// </summary>
+        public static string ACCOUNT_NOT_USER {
+            get {
+                return ResourceManager.GetString("ACCOUNT_NOT_USER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The username is already registered..
         /// </summary>
         public static string ACCOUNT_USERNAME_ALREADY_REGISTERED {

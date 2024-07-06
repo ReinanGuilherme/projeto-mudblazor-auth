@@ -2,6 +2,7 @@
 using MudblazorAuth.Application.AutoMapper;
 using MudblazorAuth.Application.UseCases.Account.GetAllUsers;
 using MudblazorAuth.Application.UseCases.Account.Register;
+using MudblazorAuth.Application.UseCases.Account.RemoveUser;
 using MudblazorAuth.Application.UseCases.Account.SignIn;
 
 namespace MudblazorAuth.Application
@@ -24,6 +25,7 @@ namespace MudblazorAuth.Application
             services.AddScoped<IAccountRegisterUseCase, AccountRegisterUseCase>();
             services.AddScoped<IAccountSignInUseCase, AccountSignInUseCase>();
             services.AddScoped<IAccountGetAllUsersUseCase, AccountGetAllUsersUseCase>();
+            services.AddScoped<IAccountRemoveUserUseCase, AccountRemoveUserUseCase>();
         }
     }
 }
