@@ -18,11 +18,16 @@ namespace MudblazorAuth.Infrastructure.Database.Repositories
             await _dbContext.Accounts.AddAsync(account);
 
             return account.Id;
-        }
+        }		
 
-        public async Task<Account?> GetByUsername(string username)
+		public async Task<Account?> GetByUsername(string username)
         {
             return await _dbContext.Accounts.AsNoTracking().FirstOrDefaultAsync(account => account.Username.Equals(username));
         }
-    }
+
+		public async Task<IEnumerable<Account>?> GetAllByIdProfile(int idProfile)
+		{
+			return await _dbContext.Accounts.Where(x => x.IdProfile == idProfile).AsNoTracking().ToListAsync();
+		}
+	}
 }

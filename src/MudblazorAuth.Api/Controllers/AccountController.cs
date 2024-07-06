@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MudblazorAuth.Application.UseCases.Account.GetAllUsers;
 using MudblazorAuth.Application.UseCases.Account.Register;
 using MudblazorAuth.Application.UseCases.Account.SignIn;
 using MudblazorAuth.Communication.Requests.Account;
@@ -28,6 +29,14 @@ namespace MudblazorAuth.Api.Controllers
 			ResponseAccountRegister idAccount = await useCase.Execute(request);
 
 			return Created(string.Empty, idAccount);
+		}
+
+		[HttpGet("users")]
+		public async Task<IActionResult> GetAllUsers(
+			[FromServices] IAccountGetAllUsersUseCase useCase)
+		{
+			var response = await useCase.Execute();
+			return Ok(response);
 		}
 	}
 }
