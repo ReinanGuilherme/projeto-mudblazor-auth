@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using MudblazorAuth.Communication.Requests;
+using MudblazorAuth.Communication.Requests.Account;
 using MudblazorAuth.Exception;
 
 namespace MudblazorAuth.Application.UseCases.Account.Register

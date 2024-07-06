@@ -1,4 +1,4 @@
-﻿using MudblazorAuth.Communication.Requests;
+﻿using MudblazorAuth.Communication.Requests.Account;
 using MudblazorAuth.Communication.Responses;
 
 namespace MudblazorAuth.Application.UseCases.Account.Register

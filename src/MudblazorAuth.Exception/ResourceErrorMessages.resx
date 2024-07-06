@@ -141,4 +141,7 @@
   <data name="USERNAME_EMPTY" xml:space="preserve">
     <value>Username empty.</value>
   </data>
+  <data name="USERNAME_OR_PASSWORD_INVALID" xml:space="preserve">
+    <value>Invalid username or password.</value>
+  </data>
 </root>

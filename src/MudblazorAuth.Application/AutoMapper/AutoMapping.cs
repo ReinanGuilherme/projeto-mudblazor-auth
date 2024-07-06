@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MudblazorAuth.Communication.Requests;
+using MudblazorAuth.Communication.Requests.Account;
 using MudblazorAuth.Communication.Responses;
 using MudblazorAuth.Domain.Entities;
 using AM = AutoMapper;

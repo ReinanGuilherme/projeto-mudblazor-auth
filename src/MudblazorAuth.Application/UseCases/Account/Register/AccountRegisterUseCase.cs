@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using MudblazorAuth.Communication.Requests;
+using MudblazorAuth.Communication.Requests.Account;
 using MudblazorAuth.Communication.Responses;
 using MudblazorAuth.Domain.Repositories;
 using MudblazorAuth.Domain.Security.Cryptography;

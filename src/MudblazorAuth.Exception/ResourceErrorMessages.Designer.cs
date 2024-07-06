@@ -131,5 +131,14 @@ namespace MudblazorAuth.Exception {
                 return ResourceManager.GetString("USERNAME_EMPTY", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid username or password..
+        /// </summary>
+        public static string USERNAME_OR_PASSWORD_INVALID {
+            get {
+                return ResourceManager.GetString("USERNAME_OR_PASSWORD_INVALID", resourceCulture);
+            }
+        }
     }
 }
