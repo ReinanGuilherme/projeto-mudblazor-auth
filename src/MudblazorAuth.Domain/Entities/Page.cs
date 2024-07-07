@@ -14,6 +14,6 @@ namespace MudblazorAuth.Domain.Entities
         [Column("is_private")]
         public bool IsPrivate { get; set; }
 
-		public ICollection<ProfilePage> ProfilePages { get; set; } = default!;
+		public virtual ICollection<ProfilePage> ProfilePages { get; set; } = default!;
 	}
 }

@@ -38,6 +38,7 @@ namespace MudblazorAuth.Infrastructure
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 			services.AddScoped<IAccountWriteOnlyRepository, AccountRepository>();
 			services.AddScoped<IAccountReadOnlyRepository, AccountRepository>();
+			services.AddScoped<IPageReadOnlyRepository, PageRepository>();
 		}
 	}
 }

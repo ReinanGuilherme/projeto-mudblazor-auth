@@ -24,6 +24,7 @@ namespace MudblazorAuth.Application.AutoMapper
         private void EntityToResponse()
         {
 			CreateMap<Account, ResponseAccountGetAllUsers>();
+			CreateMap<Page, ResponseGetAllByIdProfile>();
 		}
     }
 }
