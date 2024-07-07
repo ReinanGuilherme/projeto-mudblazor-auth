@@ -3,14 +3,14 @@ using AutoMapper;
 using MudblazorAuth.Communication.Responses;
 using MudblazorAuth.Domain.Repositories;
 
-namespace MudblazorAuth.Application.UseCases.Page.GetAllByIdProfile
+namespace MudblazorAuth.Application.UseCases.Page.GetAllByIdProfileUser
 {
-	internal class GetAllByIdProfileUseCase : IGetAllByIdProfileUseCase
+	internal class GetAllByIdProfileUserUseCase : IGetAllByIdProfileUserUseCase
 	{
 		private readonly IPageReadOnlyRepository _pageReadOnlyRepository;
 		private readonly IMapper _mapper;
 
-		public GetAllByIdProfileUseCase(IPageReadOnlyRepository pageReadOnlyRepository, IMapper mapper)
+		public GetAllByIdProfileUserUseCase(IPageReadOnlyRepository pageReadOnlyRepository, IMapper mapper)
 		{
 			_pageReadOnlyRepository = pageReadOnlyRepository;
 			_mapper = mapper;

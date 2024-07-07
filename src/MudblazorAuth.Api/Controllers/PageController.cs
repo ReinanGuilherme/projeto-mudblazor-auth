@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MudblazorAuth.Application.UseCases.Page.GetAllByIdProfile;
+using MudblazorAuth.Application.UseCases.Page.GetAllByIdProfileUser;
 
 namespace MudblazorAuth.Api.Controllers
 {
@@ -8,7 +8,7 @@ namespace MudblazorAuth.Api.Controllers
 	public class PageController : ControllerBase
 	{
 		[HttpGet("user")]
-		public async Task<ActionResult> GetAllByIdProfile([FromServices] IGetAllByIdProfileUseCase useCase)
+		public async Task<ActionResult> GetAllByIdProfileUser([FromServices] IGetAllByIdProfileUserUseCase useCase)
 		{
 			var response = await useCase.Execute();
 			return Ok(response);
